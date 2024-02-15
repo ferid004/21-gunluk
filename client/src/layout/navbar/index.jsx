@@ -2,11 +2,15 @@ import React from 'react'
 import './index.scss'
 
 import titimg from '../../img/denticare-logo-inv.png'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
+import { useUser } from '../../context/userContext'
 
 
 
 function Navbar() {
+
+  const { User, setUser, LoginUser } = useUser()
+
   return (
     <div id='navbar'>
       <div className="container">
@@ -28,11 +32,11 @@ function Navbar() {
                 <NavLink to={'/about'}>About</NavLink>
               </div>
               <div className="link">
-                <NavLink to={'/contact'}>Contact</NavLink>
+                <NavLink onClick={User ? () => setUser(null) : () => null} to={'/login'}>{User ? 'Log Out' : 'Login'}</NavLink>
               </div>
-              <div className="link">
-                <NavLink to={'/admin'}>Portfoli</NavLink>
-              </div>
+              {User && User.role === "admin" ? <div className="link">
+                <NavLink to={"/admin"}>Admin</NavLink>
+              </div> : ''}
               <div className="link">
                 <NavLink to={'/shop'}>Shop</NavLink>
               </div>
@@ -41,7 +45,9 @@ function Navbar() {
           <div className="right">
             <div className="icons">
               <div className="icon"  >
-                <i className="fa-solid fa-user"></i>
+                <NavLink to={'/profil'}>
+                  <i className="fa-solid fa-user"></i>
+                </NavLink>
               </div>
               <div className="icon">
                 <i className="fa-solid fa-basket-shopping"></i>
@@ -50,10 +56,14 @@ function Navbar() {
                 <i className="fa-solid fa-heart"></i>
               </div>
               <div className="icon">
-                <i className="fa-brands fa-instagram"></i>
+                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                  <i className="fa-brands fa-facebook"></i>
+                </a>
               </div>
               <div className="icon">
-                <i className="fa-solid fa-basket-shopping"></i>
+                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                  <i className="fa-brands fa-instagram"></i>
+                </a>
               </div>
             </div>
           </div>

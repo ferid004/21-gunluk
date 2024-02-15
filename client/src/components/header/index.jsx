@@ -13,19 +13,23 @@ import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import axios from 'axios';
 
+import './index.scss'
+
 export default function Header() {
-    const [header, setHeader] = useState([])
-    const get_header = async () => {
-      const res = await axios.get('http://localhost:3000/header')
-      const data = res.data.data
-      setHeader(data)
-      console.log(data);
-    }
-    useEffect(() => {
-      get_header()
-    }, [])
+  const [header, setHeader] = useState([])
+  const [loading, setLoading] = useState(false)
+  const get_header = async () => {
+    const res = await axios.get('http://localhost:3000/header')
+    const data = res.data.data
+    setHeader(data)
+    console.log(data);
+    setLoading(true)
+  }
+  useEffect(() => {
+    get_header()
+  }, [])
   return (
-    <>
+    <div id='header'>
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -40,12 +44,16 @@ export default function Header() {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-        {header && header.map((item)=>(
-            <div className="" key={item._id}>
-                <SwiperSlide><img src={item.src} alt="" /></SwiperSlide>
-            </div>
-        ))}
+        {loading ? header && header.map((item) => (
+          <div className="swip" key={item._id}>
+            <SwiperSlide><img src={item.src} alt="" /></SwiperSlide>
+          </div>
+        )) :
+          <div className='loadingcss'>
+            <div className="loader"></div>
+          </div>
+        }
       </Swiper>
-    </>
+    </div>
   );
 }
