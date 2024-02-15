@@ -8,6 +8,7 @@ import Admin from './pages/admin';
 import Profil from './pages/profil';
 import Register from './pages/register';
 import Login from './pages/login';
+import Shop from './pages/shop';
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
               <Route element={<Profil></Profil>}  path='/profil' ></Route>
               <Route element={<Register></Register>}  path='/register' ></Route>
               <Route element={<Login></Login>}  path='/login' ></Route>
+              <Route element={<Shop></Shop>}  path='/shop' ></Route>
 
             </Route>
           </Routes>

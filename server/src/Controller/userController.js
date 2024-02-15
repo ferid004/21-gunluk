@@ -28,6 +28,7 @@ export const Register = async (req, res) => {
             username: newUser.username,
             role: newUser.role,
             image: newUser.image,
+            info:newUser.info,
             basket: newUser.basket,
             wishlist: newUser.wishlist,
         }, "Ferid", { expiresIn: '12h' })
@@ -63,6 +64,7 @@ export const Login = async (req, res) => {
             username: FindUser.username,
             role: FindUser.role,
             image: FindUser.image,
+            info: FindUser.info,
             basket: FindUser.basket,
             wishlist: FindUser.wishlist,
         }, "Ferid", { expiresIn: '12h' })
@@ -132,6 +134,16 @@ export const UpdateImage = async (req, res) => {
         const { image } = req.body
         const data = await User.findByIdAndUpdate(id, { image: image })
         res.status(200).send({ message: "Profile image successfully updated!", data })
+    } catch (error) {
+        res.status(500).send({ message: "NOT sucsess Update" })
+    }
+}
+export const UpdateInfo = async (req, res) => {
+    try {
+        const { id } = req.params
+        const { info } = req.body
+        const data = await User.findByIdAndUpdate(id, { info: info })
+        res.status(200).send({ message: "Profile info successfully updated!", data })
     } catch (error) {
         res.status(500).send({ message: "NOT sucsess Update" })
     }

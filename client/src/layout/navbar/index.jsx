@@ -32,14 +32,14 @@ function Navbar() {
                 <NavLink to={'/about'}>About</NavLink>
               </div>
               <div className="link">
+                <NavLink to={'/shop'}>Shop</NavLink>
+              </div>
+              <div className="link">
                 <NavLink onClick={User ? () => setUser(null) : () => null} to={'/login'}>{User ? 'Log Out' : 'Login'}</NavLink>
               </div>
               {User && User.role === "admin" ? <div className="link">
                 <NavLink to={"/admin"}>Admin</NavLink>
               </div> : ''}
-              <div className="link">
-                <NavLink to={'/shop'}>Shop</NavLink>
-              </div>
             </div>
           </div>
           <div className="right">

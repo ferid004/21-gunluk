@@ -1,5 +1,5 @@
 import express from 'express'
-import { DeleteUser, GetAllUsers, GetUserByID, Login, Register, UpdateImage, UpdateName, UpdatePassword } from "./../Controller/userController.js";
+import { DeleteUser, GetAllUsers, GetUserByID, Login, Register, UpdateImage, UpdateInfo, UpdateName, UpdatePassword } from "./../Controller/userController.js";
 
 const router = express.Router()
 
@@ -26,6 +26,7 @@ router.delete('/:id', DeleteUser)
 router.put("/username/:id", UpdateName)
 router.put("/password/:id", UpdatePassword)
 router.put("/image/:id", UpdateImage)
+router.put("/info/:id", UpdateInfo)
 
 
 
