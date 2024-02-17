@@ -1,16 +1,39 @@
 import { createContext, useContext, useState } from "react";
+import useLocalStroge from "../hook/useLocalStroge";
+import axios from "axios";
 
 const userContext = createContext()
 
 export const UserProvider = ({ children }) => {
-
-    const [User, setUser] = useState(null)
+    const [User, setUser,update] = useLocalStroge("profil")
 
     function LoginUser(user) {
         setUser(user)
     }
 
-    const data = { User, setUser, LoginUser }
+    //// basket function
+    function addbasket(item) {
+        const index=User.basket.findIndex((x)=> x._id === item._id);
+        if (index===-1) {
+            item.count=1
+            User.basket.push(item)
+            update()
+            putBasket(User.basket,User.userId)
+            return
+        }
+        User.basket[index].count += 1;
+        update()
+        putBasket(User.basket,User.userId)
+
+
+    }
+
+    async function putBasket (basket,id) {
+        const res=await axios.put(`http://localhost:3000/user/basket/${id}` ,{basket:basket})
+    }   
+    ///
+
+    const data = { User, setUser, LoginUser,addbasket }
 
     return (
         <userContext.Provider value={data}>

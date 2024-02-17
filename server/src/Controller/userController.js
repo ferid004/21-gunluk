@@ -163,3 +163,17 @@ export const UpdatePassword = async (req, res) => {
         res.status(500).send({ message: "NOT sucsess Update" })
     }
 }
+
+
+
+//// basket update
+ export const UpdateBasket = async (req, res) => {
+    try {
+        const { id } = req.params
+        const { basket } = req.body
+        const data = await User.findByIdAndUpdate(id, {basket:basket})
+        res.status(200).send({ message: "sucsess DELETE", data })
+    } catch (error) {
+        res.status(500).send({ message: "NOT sucsess Update" })
+    }
+ }

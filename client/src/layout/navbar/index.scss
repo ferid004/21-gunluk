@@ -5,6 +5,10 @@
   justify-content: center;
   background-color: #08B28D;
   color: white;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  left: 0;
 
   .container {
     width: 80%;
@@ -44,7 +48,8 @@
           .link {
             padding: 10px;
             transition: 0.5s;
-            &:hover{
+
+            &:hover {
               border-radius: 4px;
               background-color: white;
               color: black;
@@ -66,11 +71,18 @@
           // .icon {
           //   padding: 5px;
           // }
-          i{
+          i {
             padding: 5px;
           }
         }
       }
     }
+
+    @media only screen and (max-width:920px) {
+      .dev {
+        display: none;
+      }
+    }
+
   }
 }

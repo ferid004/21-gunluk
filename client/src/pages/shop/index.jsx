@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import './index.scss'
 import axios from 'axios'
+import { useUser } from '../../context/userContext'
 function Shop() {
+    ///
+    const { User, setUser, LoginUser,addbasket } = useUser()
+
+    ///
     const [product, setProduct] = useState([])
 
     const get_product = async () => {
@@ -26,6 +31,7 @@ function Shop() {
                             <div className="info">{item.info}</div>
                             <div className="src">{item.src}</div>
                             <div className="price">{item.price}</div>
+                            <button onClick={()=>addbasket(item)}>basket</button>
                         </div>
                     ))}
                 </div>
