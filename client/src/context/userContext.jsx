@@ -27,13 +27,33 @@ export const UserProvider = ({ children }) => {
 
 
     }
+    function art(item) {
+        const index=User.basket.findIndex((x)=> x._id === item._id);
+        User.basket[index].count ++
+        update()
+        putBasket(User.basket,User.userId)
+    }
+    function azalt(item) {
+        const index=User.basket.findIndex((x)=> x._id === item._id);
+        if (User.basket[index].count ===1) {
+            return
+        }
+        User.basket[index].count --
+        update()
+        putBasket(User.basket,User.userId)
+    }
+    function basketdelet(item) {
+        User.basket=User.basket.filter((x)=> x._id !== item._id);
+        update()
+        putBasket(User.basket,User.userId)
+    }
 
     async function putBasket (basket,id) {
         const res=await axios.put(`http://localhost:3000/user/basket/${id}` ,{basket:basket})
     }   
     ///
 
-    const data = { User, setUser, LoginUser,addbasket }
+    const data = { User, setUser, LoginUser,addbasket,art,azalt,basketdelet }
 
     return (
         <userContext.Provider value={data}>

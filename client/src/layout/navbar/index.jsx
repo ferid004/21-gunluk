@@ -55,7 +55,9 @@ function Navbar() {
                   </NavLink>
                 </div>
                 <div className="icon">
+                  <NavLink to={'/basket'}>
                   <i className="fa-solid fa-basket-shopping"></i>
+                  </NavLink>
                 </div>
                 <div className="icon">
                   <i className="fa-solid fa-heart"></i>

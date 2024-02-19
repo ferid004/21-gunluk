@@ -9,6 +9,8 @@ import Profil from './pages/profil';
 import Register from './pages/register';
 import Login from './pages/login';
 import Shop from './pages/shop';
+import Basket from './pages/basket';
+import Detail from './pages/detail';
 
 function App() {
 
@@ -24,6 +26,8 @@ function App() {
               <Route element={<Register></Register>}  path='/register' ></Route>
               <Route element={<Login></Login>}  path='/login' ></Route>
               <Route element={<Shop></Shop>}  path='/shop' ></Route>
+              <Route element={<Basket></Basket>}  path='/basket' ></Route>
+              <Route element={<Detail></Detail>}  path='/detail/:id' ></Route>
 
             </Route>
           </Routes>

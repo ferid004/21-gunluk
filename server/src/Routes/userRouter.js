@@ -30,6 +30,7 @@ router.put("/info/:id", UpdateInfo)
 
 // basket update
 router.put('/basket/:id', UpdateBasket)
+// router.get('/basket/', GetAllbasket)
 
 
 export default router
