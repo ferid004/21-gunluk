@@ -5,7 +5,7 @@ import Box_1 from '../box_1';
 function Aoss() {
     useEffect(() => {
         AOS.init();
-    }, []);
+    }, [ AOS.init()]);
     return (
 
         <div data-aos="zoom-out-down">
