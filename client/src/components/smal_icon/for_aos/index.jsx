@@ -10,7 +10,6 @@ function Aoss() {
 
         <div data-aos="zoom-out-down">
             <Box_1></Box_1>
-
         </div>
     )
 }
