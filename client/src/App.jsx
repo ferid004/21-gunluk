@@ -13,6 +13,7 @@ import Basket from './pages/basket';
 import Detail from './pages/detail';
 import Wish from './pages/wish';
 import Contact from './pages/contact';
+import About from './pages/about';
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
               <Route element={<Basket></Basket>}  path='/basket' ></Route>
               <Route element={<Wish></Wish>}  path='/wish' ></Route>
               <Route element={<Contact></Contact>}  path='/contact' ></Route>
+              <Route element={<About></About>}  path='/about' ></Route>
               <Route element={<Detail></Detail>}  path='/detail/:id' ></Route>
 
             </Route>

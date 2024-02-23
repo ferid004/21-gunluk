@@ -1,0 +1,38 @@
+#ab{
+    .swiper-button-prev:after{
+        display: none;
+    }
+    .swiper-button-next:after {
+        display: none;
+    }
+    .swiper{
+        .box{
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            gap: 10px;
+            .imgboxx{
+                img{
+                    border-radius: 100%;
+                }
+                width: 80px ;
+            }
+            .text{
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 10px;
+                .title{
+                    font-size: 22px;
+                }
+                .info{
+                    opacity: 80%;
+                    max-width: 190px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
