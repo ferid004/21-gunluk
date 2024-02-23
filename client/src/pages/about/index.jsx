@@ -7,7 +7,7 @@ function About() {
         <>
         <div id='about'>
             <div className="container">
-                <div className="title">
+                <div className="titlew">
                     <div className="up">We'd Love To</div>
                     <div className="down">See You Smile</div>
                 </div>
