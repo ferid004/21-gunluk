@@ -1,0 +1,46 @@
+#UserComment {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .container {
+        width: 97%;
+
+        .swiper {
+            .box{
+                margin-bottom: 40px;
+                background-color: #f0f4f7;
+                padding: 10px;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            .up {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+
+                .name {
+                    font-size: 22px;
+                    color: #00af89;
+                }
+
+                .src {
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 100%;
+
+                    img {
+                        border-radius: 100%;
+                    }
+                }
+                }
+            }
+            .info{
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+
+            }
+        }
+    }
+}
