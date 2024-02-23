@@ -10,6 +10,9 @@ import icon_8 from '../../img/small_icons/Screenshot 2024-02-22 182353.png'
 import React, { useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 import './index.scss'
 function About_swiper() {
     
@@ -61,7 +64,7 @@ function About_swiper() {
                 modules={[Autoplay, Pagination, Navigation]}
                 className="mySwiper"
                 breakpoints={{ // Breakpoints ekleyerek responsif hale getiriyoruz
-                    992: {
+                    1000: {
                         slidesPerView: 3, // 1200px genişliğinde 2 slayt göster
                     },
                     400: {
@@ -74,91 +77,91 @@ function About_swiper() {
                 }}
             >
                 <SwiperSlide>
-                    <div className='box'>
-                        <div className="imgboxx">
+                    <div className='box1212'>
+                        <div className="imgboxx1212">
                             <img src={icon_1} alt="" />
                         </div>
-                        <div className="text">
-                            <div className="title">General Dentistry</div>
-                            <div className="info">Competently parallel task researched data process.</div>
+                        <div className="text1212">
+                            <div className="title1212">General Dentistry</div>
+                            <div className="info1212">Competently parallel task researched data process.</div>
                         </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                <div className='box'>
-                <div className="imgboxx">
+                <div className='box1212'>
+                <div className="imgboxx1212">
                     <img src={icon_2} alt="" />
                 </div>
-                <div className="text">
-                    <div className="title">Implants</div>
-                    <div className="info">Leverage other resource leveling convergence data.</div>
+                <div className="text1212">
+                    <div className="title1212">Implants</div>
+                    <div className="info1212">Leverage other resource leveling convergence data.</div>
                 </div>
             </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                <div className='box'>
-                <div className="imgboxx">
+                <div className='box1212'>
+                <div className="imgboxx1212">
                     <img src={icon_3} alt="" />
                 </div>
-                <div className="text">
-                    <div className="title">Dental Surgery</div>
-                    <div className="info">Engage fully tested process top line platform clients.</div>
+                <div className="text1212">
+                    <div className="title1212">Dental Surgery</div>
+                    <div className="info1212">Engage fully tested process top line platform clients.</div>
                 </div>
             </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                <div className='box'>
-                <div className="imgboxx">
+                <div className='box1212'>
+                <div className="imgboxx1212">
                     <img src={icon_4} alt="" />
                 </div>
-                <div className="text">
-                    <div className="title">Alignment</div>
-                    <div className="info">User generated content in real time offshoring.</div>
+                <div className="text1212">
+                    <div className="title1212">Alignment</div>
+                    <div className="info1212">User generated content in real time offshoring.</div>
                 </div>
             </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                <div className='box'>
-                <div className="imgboxx">
+                <div className='box1212'>
+                <div className="imgboxx1212">
                     <img src={icon_5} alt="" />
                 </div>
-                <div className="text">
-                    <div className="title">
+                <div className="text1212">
+                    <div className="title1212">
 Teeth Braces</div>
-                    <div className="info">Synthesize integrated schemas with networks.</div>
+                    <div className="info1212">Synthesize integrated schemas with networks.</div>
                 </div>
             </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                <div className='box'>
-                <div className="imgboxx">
+                <div className='box1212'>
+                <div className="imgboxx1212">
                     <img src={icon_6} alt="" />
                 </div>
-                <div className="text">
-                    <div className="title">
+                <div className="text1212">
+                    <div className="title1212">
 Whitening</div>
-                    <div className="info">Incubate standards great channels scalable benefits.</div>
+                    <div className="info1212">Incubate standards great channels scalable benefits.</div>
                 </div>
             </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                <div className='box'>
-                <div className="imgboxx">
+                <div className='box1212'>
+                <div className="imgboxx1212">
                     <img src={icon_7} alt="" />
                 </div>
-                <div className="text">
-                    <div className="title">Teeth Protection</div>
-                    <div className="info">Evisculate holistic innovation rather than centric data.</div>
+                <div className="text1212">
+                    <div className="title1212">Teeth Protection</div>
+                    <div className="info1212">Evisculate holistic innovation rather than centric data.</div>
                 </div>
             </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                <div className='box'>
-                <div className="imgboxx">
+                <div className='box1212'>
+                <div className="imgboxx1212">
                     <img src={icon_8} alt="" />
                 </div>
-                <div className="text">
-                    <div className="title">
+                <div className="text1212">
+                    <div className="title1212">
 Prosthesis</div>
                     <div className="info">Revolutionize global sources through dental services.</div>
                 </div>

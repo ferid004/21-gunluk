@@ -5,7 +5,12 @@
 
     .container {
         width: 97%;
-
+        .swiper-button-prev:after{
+            display: none;
+        }
+        .swiper-button-next:after {
+            display: none;
+        }
         .swiper {
             .box{
                 margin-bottom: 40px;
