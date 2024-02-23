@@ -68,7 +68,7 @@ export default function User_commet() {
                     <Swiper
                         onSwiper={setSwiperRef}
                         slidesPerView={3}
-                        centeredSlides={true}
+                        centeredSlides={false}
                         spaceBetween={30}
                         pagination={{
                             type: 'fraction',
@@ -80,7 +80,18 @@ export default function User_commet() {
                         navigation={true}
                         modules={[Autoplay, Pagination, Navigation]}
                         className="mySwiper"
-                       
+                        breakpoints={{ // Breakpoints ekleyerek responsif hale getiriyoruz
+                            1200: {
+                                slidesPerView: 3, // 1200px genişliğinde 2 slayt göster
+                            },
+                            600: {
+                                slidesPerView: 2, // 600px genişliğinde sadece 1 slayt göster
+                            },
+                            0: {
+                                slidesPerView: 1, // 600px genişliğinde sadece 1 slayt göster
+                            },
+                            
+                        }}
                     >
                         {user_comme && user_comme.map((item) => (
                             item.info ? (
