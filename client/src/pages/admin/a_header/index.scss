@@ -1,0 +1,127 @@
+#admin_header {
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    /* HTML: <div class="loader"></div> */
+    .loader {
+        width: 40px;
+        height: 30px;
+        --c: no-repeat linear-gradient(#000 0 0);
+        background:
+            var(--c) 0 100%/8px 30px,
+            var(--c) 50% 100%/8px 20px,
+            var(--c) 100% 100%/8px 10px;
+        position: relative;
+        clip-path: inset(-100% 0);
+    }
+
+    .loader:before {
+        content: "";
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #000;
+        left: -16px;
+        top: 0;
+        animation:
+            l5-1 2s linear infinite,
+            l5-2 0.5s cubic-bezier(0, 200, .8, 200) infinite;
+    }
+
+    @keyframes l5-1 {
+        0% {
+            left: -16px;
+            transform: translateY(-8px)
+        }
+
+        100% {
+            left: calc(100% + 8px);
+            transform: translateY(22px)
+        }
+    }
+
+    @keyframes l5-2 {
+        100% {
+            top: -0.1px
+        }
+    }
+
+    .container {
+        width: 80%;
+
+        .header {
+            background-color: rgba(252, 255, 196, 0.44);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .text {
+                margin-top: 30px;
+                font-size: 26px;
+            }
+
+            .formikk {
+                display: flex;
+                margin: 20px;
+
+                .form {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 10px;
+
+                    label {
+                        font-size: 20px;
+                    }
+
+                    input {
+                        all: unset;
+                        padding: 10px;
+                        background-color: white;
+                        border-radius: 10px;
+                        border: 1px solid black;
+                    }
+
+                    button {
+                        all: unset;
+                        padding: 10px;
+                        background-color: rgb(0, 26, 255);
+                        border-radius: 10px;
+                        color: white;
+                        transition: 0.5s;
+
+                        &:hover {
+                            background-color: rgb(0, 16, 159);
+                        }
+                    }
+                }
+            }
+
+            .table {
+                .imgbox {
+                    width: 200px;
+                }
+
+                .src {
+                    max-width: 380px;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+
+                .del_btn {
+                    background: red;
+                    color: white;
+                    padding: 10px;
+                    margin: 15px;
+                    border-radius: 14px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

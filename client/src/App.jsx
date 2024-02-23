@@ -11,6 +11,8 @@ import Login from './pages/login';
 import Shop from './pages/shop';
 import Basket from './pages/basket';
 import Detail from './pages/detail';
+import Wish from './pages/wish';
+import Contact from './pages/contact';
 
 function App() {
 
@@ -27,6 +29,8 @@ function App() {
               <Route element={<Login></Login>}  path='/login' ></Route>
               <Route element={<Shop></Shop>}  path='/shop' ></Route>
               <Route element={<Basket></Basket>}  path='/basket' ></Route>
+              <Route element={<Wish></Wish>}  path='/wish' ></Route>
+              <Route element={<Contact></Contact>}  path='/contact' ></Route>
               <Route element={<Detail></Detail>}  path='/detail/:id' ></Route>
 
             </Route>

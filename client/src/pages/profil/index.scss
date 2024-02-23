@@ -228,3 +228,18 @@
     }
 
 }
+
+@media only screen and (max-width: 992px) {
+  .container {
+      flex-wrap: wrap;
+      .right{
+        margin-right: 32px;
+      }
+  }
+}
+@media only screen and (max-width: 630px) {
+  .img_name {
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+}

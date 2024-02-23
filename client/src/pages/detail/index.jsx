@@ -22,12 +22,14 @@ function Detail() {
             </Helmet>
             <div className="container">
                 {product && (
-                    <ul className='box' key={product._id}>
-                        <li className='p'>name: {product.name}</li>
-                        <li><div className='imgbox'><img src={product.src} alt="" /></div></li>
-                        <li className='p'>info: {product.ifno}</li>
-                        <li><button onClick={() => handlewish(product)}>wish</button></li>
-                    </ul>
+                    <div className='box' key={product._id}>
+                        <div><div className='imgbox'><img src={product.src} alt="" /></div></div>
+                        <div className="text">
+                        <div className='name'>name: {product.name}</div>
+                        <div className='info'>info: {product.info}</div>
+                        <div className='price'>price: ${product.price}</div>
+                        </div>
+                    </div>
                 )}
             </div>
         </div>

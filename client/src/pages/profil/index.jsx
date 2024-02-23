@@ -63,7 +63,7 @@ function Profil() {
                 {User ? <>
                 <div className="left">
                     <div className="img_name">
-                        <div className='u_name'> Istifadəçinin adı :{User.username}</div>
+                        <div className='u_name'>Profil name: {User.username}</div>
                         <div className='u_img'>
                             <img src={User.image} alt="" />
                         </div>

@@ -1,22 +1,76 @@
-#detail{
+#detail {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    .container{
-        width: 80%;
-        .box{
 
+    .container {
+        width: 80%;
+
+        .box {
             display: flex;
             justify-content: center;
             align-items: center;
+            gap: 100px;
+            // flex-direction: column;
+            flex-wrap: wrap;
+        }
+
+        @media only screen and (max-width: 992px) {
+            .box {
+                gap: 30px;
+            }
+        }
+
+        .text {
+            display: flex;
             flex-direction: column;
+            gap: 20px;
+
+            .name {
+                font-size: 32px;
+                font-weight: 500;
+            }
+
+            .info {
+                font-size: 26px;
+            }
+
+            .price {
+                font-size: 24px;
+            }
         }
+
         .imgbox {
-            width: 400px;
-            height: 400px;
+            width: 600px;
+            height: 600px;
         }
+
+        @media only screen and (max-width: 748px) {
+            .imgbox {
+                width: 200px !important;
+                height: 200px !important;
+            }
+            .text {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
     
+                .name {
+                    font-size: 22px;
+                    font-weight: 500;
+                }
+    
+                .info {
+                    font-size: 20px;
+                }
+    
+                .price {
+                    font-size: 18px;
+                }
+            }
+        }
+
         button {
             all: unset;
             border: 1px solid black;
@@ -24,12 +78,12 @@
             padding: 10px;
             background-color: red;
             color: white;
-    
+
             &:hover {
                 background-color: rgb(239, 117, 117);
             }
         }
-    
+
         .p {
             overflow: hidden;
             white-space: nowrap;
@@ -39,3 +93,9 @@
     }
 }
 
+@media only screen and (max-width: 1100px) {
+    .imgbox {
+        width: 400px !important;
+        height: 400px !important;
+    }
+}

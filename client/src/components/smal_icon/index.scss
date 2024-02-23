@@ -1,0 +1,16 @@
+#small-icons{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .container{
+        width: 80%;
+        display: flex;
+        flex-wrap: wrap;
+        height: 100%;
+        gap: 20px;
+        // justify-content: space-between;
+        
+    }
+}

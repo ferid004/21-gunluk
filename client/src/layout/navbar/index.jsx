@@ -56,11 +56,13 @@ function Navbar() {
                 </div>
                 <div className="icon">
                   <NavLink to={'/basket'}>
-                  <i className="fa-solid fa-basket-shopping"></i>
+                    <i className="fa-solid fa-basket-shopping"></i>
                   </NavLink>
                 </div>
                 <div className="icon">
-                  <i className="fa-solid fa-heart"></i>
+                  <NavLink to={'/wish'}>
+                    <i className="fa-solid fa-heart"></i>
+                  </NavLink>
                 </div>
                 <div className="icon">
                   <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
@@ -118,7 +120,9 @@ function Navbar() {
                     <i className="fa-solid fa-basket-shopping"></i>
                   </div>
                   <div onClick={() => setIsOpen(!isopen)} className="icon">
-                    <i className="fa-solid fa-heart"></i>
+                    <NavLink to={'/wish'}>
+                      <i className="fa-solid fa-heart"></i>
+                    </NavLink>
                   </div>
                   <div onClick={() => setIsOpen(!isopen)} className="icon">
                     <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">

@@ -90,16 +90,7 @@ export const GetAllUsers = async (req, res) => {
         res.status(500).send({ message: "NOT sucsess GET" })
     }
 }
-// export const GetAllbasket = async (req, res) => {
-//     try {
-//         const data = await User.find({}); // User modelinden verileri doğrudan alabilirsiniz
-//         const baskets = data.map(user => user.basket); // Her kullanıcının sepetini almak için map kullanın
-//         res.status(200).send({ message: "Success GET", data: baskets }); // Basket verilerini gönderin
-//     } catch (error) {
-//         console.error(error); // Hata varsa konsola yazdırın
-//         res.status(500).send({ message: "Internal Server Error" }); // Hata durumunda uygun bir mesaj gönderin
-//     }
-// }
+
 
 export const GetUserByID = async (req, res) => {
     try {
@@ -182,6 +173,16 @@ export const UpdatePassword = async (req, res) => {
         const { id } = req.params
         const { basket } = req.body
         const data = await User.findByIdAndUpdate(id, {basket:basket})
+        res.status(200).send({ message: "sucsess DELETE", data })
+    } catch (error) {
+        res.status(500).send({ message: "NOT sucsess Update" })
+    }
+ }
+ export const UpdateWish = async (req, res) => {
+    try {
+        const { id } = req.params
+        const { wishlist } = req.body
+        const data = await User.findByIdAndUpdate(id, {wishlist:wishlist})
         res.status(200).send({ message: "sucsess DELETE", data })
     } catch (error) {
         res.status(500).send({ message: "NOT sucsess Update" })

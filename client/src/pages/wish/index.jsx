@@ -4,10 +4,10 @@ import './index.scss'
 import { useUser } from '../../context/userContext'
 import { useNavigate } from 'react-router-dom'
 
-function Basket() {
+function Wish() {
 
   // const { User, setUser, LoginUser } = useUser()
-  const { User, setUser, LoginUser, addbasket,art,azalt,basketdelet  } = useUser()
+  const { User, setUser, LoginUser, addbasket,art,azalt,basketdelet,addwish  } = useUser()
 
   console.log(User);
   ///
@@ -23,8 +23,9 @@ function Basket() {
 
   function refresh(item,callback) {
     callback(item)
-    navigate('/basket')
+    navigate('/wish')
   }
+
 
 
   const truncateInfo = (info, maxLength) => {
@@ -33,18 +34,18 @@ function Basket() {
     }
     return info;
 }
+
   return (
     <>
     {!User?''
     
     :<div id='basket'>
     <div className="my">
-      <h3>My Basket</h3>
-      <p>Total price:${User.basket.reduce((acc, elem) => acc + (elem.count * elem.price), 0)}</p>
+      <h3>My Wish</h3>
     </div>
     
   <div className="container">
-    {User.basket && User.basket.map((item) => (
+    {User.wishlist && User.wishlist.map((item) => (
       <div className='bigbox' key={item._id}>
         <div className="imgbox">
           <img src={item.src} alt="" />
@@ -54,14 +55,10 @@ function Basket() {
           <div className='info'>{truncateInfo(item.info, 32)}</div>
           <div className='price'>Price: ${item.price}</div>
           <div className="countbox">
-            <div onClick={()=>refresh(item,art)} className="countbtn custom-btn btn-9">+</div>
-            <div className='count'>{item.count}</div>
-            <div onClick={()=>refresh(item,azalt)} className="countbtn custom-btn btn-9">-</div>
           </div>
           <div className="total_price">
-            Total:$ {item.price*item.count}
           </div>
-          <div onClick={()=>refresh(item,basketdelet)} className="countbtn custom-btn btn-9">delete</div>
+          <div onClick={()=>refresh(item,addwish)} className="countbtn custom-btn btn-9">delete</div>
         </div>
       </div>
     ))}
@@ -74,4 +71,4 @@ function Basket() {
 )
 }
 
-export default Basket
+export default Wish

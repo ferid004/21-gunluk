@@ -5,7 +5,7 @@ import { useUser } from '../../context/userContext'
 import { Link } from 'react-router-dom'
 function Shop() {
     ///
-    const { User, setUser, LoginUser, addbasket } = useUser()
+    const { User, setUser, LoginUser, addbasket, addwish } = useUser()
 
     ///
     const [product, setProduct] = useState([])
@@ -17,6 +17,13 @@ function Shop() {
     useEffect(() => {
         get_product();
     }, [])
+
+    const truncateInfo = (info, maxLength) => {
+        if (info.length > maxLength) {
+            return info.substring(0, maxLength) + '...';
+        }
+        return info;
+    }
 
     return (
         <div id='shop'>
@@ -38,17 +45,16 @@ function Shop() {
                                     <img src={item.src} alt="" />
                                 </div>
                                 <div className="line"></div>
-                                
+
                                 <div className="down">
                                     <div className="name">{item.name}</div>
-                                    <div className="info">{item.info}</div>
+                                    <div className="info">{truncateInfo(item.info, 32)}</div>
                                     <div className="price">$ {item.price}</div>
                                     <div className="buton">
                                         <button className='custom-btn btn-9' onClick={() => addbasket(item)}>Add basket</button>
-                                        <button className='custom-btn btn-9' >Wish List</button>
+                                        <button className='custom-btn btn-9' onClick={() => addwish(item)} >Wish List</button>
                                         <Link to={`/detail/${item._id}`}>
-
-                                        <button className='custom-btn btn-9'  >detail</button>
+                                            <button className='custom-btn btn-9'  >detail</button>
                                         </Link>
                                     </div>
                                 </div>

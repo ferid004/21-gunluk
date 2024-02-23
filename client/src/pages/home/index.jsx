@@ -2,6 +2,7 @@ import React from 'react'
 import './index.scss'
 import { Helmet } from 'react-helmet-async'
 import Header from '../../components/header'
+import Small_icon from '../../components/smal_icon'
 
 function Home() {
   return (
@@ -11,6 +12,7 @@ function Home() {
       </Helmet>
       <div>
         <Header></Header>
+        <Small_icon></Small_icon>
       </div>
     </>
   )

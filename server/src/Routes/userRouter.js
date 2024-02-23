@@ -1,5 +1,5 @@
 import express from 'express'
-import { DeleteUser, GetAllUsers, GetUserByID, Login, Register, UpdateBasket, UpdateImage, UpdateInfo, UpdateName, UpdatePassword } from "./../Controller/userController.js";
+import { DeleteUser, GetAllUsers, GetUserByID, Login, Register, UpdateBasket, UpdateImage, UpdateInfo, UpdateName, UpdatePassword, UpdateWish } from "./../Controller/userController.js";
 
 const router = express.Router()
 
@@ -30,7 +30,7 @@ router.put("/info/:id", UpdateInfo)
 
 // basket update
 router.put('/basket/:id', UpdateBasket)
-// router.get('/basket/', GetAllbasket)
+router.put('/wish/:id', UpdateWish)
 
 
 export default router
