@@ -2,8 +2,11 @@ import React, { useEffect, useState } from 'react'
 import './index.scss'
 import axios from 'axios'
 import { useUser } from '../../context/userContext'
-import { Link } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 function Shop() {
+    const navigator=useNavigate()
+    
+    
     ///
     const { User, setUser, LoginUser, addbasket, addwish } = useUser()
 
@@ -51,8 +54,8 @@ function Shop() {
                                     <div className="info">{truncateInfo(item.info, 32)}</div>
                                     <div className="price">$ {item.price}</div>
                                     <div className="buton">
-                                        <button className='custom-btn btn-9' onClick={() => addbasket(item)}>Add basket</button>
-                                        <button className='custom-btn btn-9' onClick={() => addwish(item)} >Wish List</button>
+                                        <button className='custom-btn btn-9' onClick={() =>!User? navigator("/login"):addbasket(item)}>Add basket</button>
+                                        <button className='custom-btn btn-9' onClick={() => !User? navigator("/login"):addwish(item)} >Wish List</button>
                                         <Link to={`/detail/${item._id}`}>
                                             <button className='custom-btn btn-9'  >detail</button>
                                         </Link>

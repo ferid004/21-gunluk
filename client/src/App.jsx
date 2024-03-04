@@ -14,6 +14,7 @@ import Detail from './pages/detail';
 import Wish from './pages/wish';
 import Contact from './pages/contact';
 import About from './pages/about';
+import Error from './pages/error';
 
 function App() {
 
@@ -36,6 +37,7 @@ function App() {
               <Route element={<Detail></Detail>}  path='/detail/:id' ></Route>
 
             </Route>
+              <Route element={<Error></Error>}  path='*' ></Route>
           </Routes>
         </BrowserRouter>
       </HelmetProvider>
